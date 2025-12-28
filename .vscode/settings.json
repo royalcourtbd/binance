@@ -1,0 +1,11 @@
+{
+  "python.analysis.extraPaths": [],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.ignore": ["**/node_modules", "**/__pycache__"],
+  "python.languageServer": "Pylance"
+}
