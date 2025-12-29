@@ -18,11 +18,7 @@ class P2POrder(BaseModel):
     createTime: Optional[int] = None
     commission: Optional[str] = None
     counterPartNickName: Optional[str] = None
-    advertisementRole: Optional[str] = None
     payMethodName: Optional[str] = None
-    takerCommission: Optional[str] = None
-    takerCommissionRate: Optional[str] = None
-    takerAmount: Optional[str] = None
     additionalKycVerify: Optional[bool] = None
 
     class Config:

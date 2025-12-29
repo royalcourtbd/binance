@@ -174,14 +174,8 @@ def display_order_details(order, order_type):
     
     # Fee/Commission Details
     commission = order.get('commission', '0')
-    taker_commission = order.get('takerCommission', '0')
-    taker_commission_rate = order.get('takerCommissionRate', '0')
     print(f"\n💰 Fee Details:")
     print(f"   Commission: {commission} {order.get('asset', '')}")
-    if float(taker_commission) > 0:
-        print(f"   Taker Commission: {taker_commission} {order.get('asset', '')}")
-        print(f"   Taker Commission Rate: {taker_commission_rate}%")
-        print(f"   Taker Amount: {order.get('takerAmount', '0')} {order.get('asset', '')}")
     
     # Payment Method
     if order.get('payMethodName'):

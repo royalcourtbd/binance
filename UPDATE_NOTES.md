@@ -7,9 +7,6 @@
 এখন প্রতিটি order এ দেখতে পারবেন:
 
 - **Commission:** প্রতিটি trade এ কত fee লেগেছে
-- **Taker Commission:** Taker হিসেবে কত commission
-- **Taker Commission Rate:** Taker commission এর rate
-- **Taker Amount:** Taker হিসেবে যে amount পেয়েছেন
 
 ### 2. 💳 **Payment Method**
 
@@ -123,12 +120,9 @@ Binance API response থেকে এই fields গুলো extract করা �
 10. ✅ **orderStatus** - Order status
 11. ✅ **createTime** - Timestamp
 12. ✅ **commission** - Fee paid (NEW!)
-13. ✅ **takerCommissionRate** - Taker commission rate (NEW!)
-14. ✅ **takerCommission** - Taker commission amount (NEW!)
-15. ✅ **takerAmount** - Taker amount received (NEW!)
-16. ✅ **counterPartNickName** - Trading partner (NEW!)
-17. ✅ **payMethodName** - Payment method (NEW!)
-18. ✅ **additionalKycVerify** - KYC requirement (NEW!)
+13. ✅ **counterPartNickName** - Trading partner (NEW!)
+14. ✅ **payMethodName** - Payment method (NEW!)
+15. ✅ **additionalKycVerify** - KYC requirement (NEW!)
 
 ---
 
