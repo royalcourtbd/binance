@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from datetime import datetime
 import logging
+import socket
 
 from app.core.config import settings
 from app.routes import orders
@@ -14,6 +15,22 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+def get_local_ip() -> str:
+    """Get the local IP address of the machine"""
+    try:
+        # Create a socket connection to get local IP
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # Connect to a public DNS server (doesn't actually send data)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+        return local_ip
+    except Exception:
+        # Fallback to localhost if unable to determine
+        return "127.0.0.1"
+
 
 # Create FastAPI app
 app = FastAPI(
@@ -41,6 +58,10 @@ async def startup_event():
     try:
         settings.validate()
         logger.info("API credentials validated successfully")
+
+        # Get and display local IP address
+        local_ip = get_local_ip()
+        logger.info(f"🌐 Network Access: http://{local_ip}:8000/")
     except ValueError as e:
         logger.error(f"Configuration error: {e}")
         raise
